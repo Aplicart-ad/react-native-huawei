@@ -1,0 +1,30 @@
+plugins {
+  id 'com.android.library'
+  id 'org.jetbrains.kotlin.android'
+}
+
+group = 'expo.modules.huawei'
+version = '0.1.0'
+
+android {
+  namespace "expo.modules.huawei"
+  compileSdkVersion rootProject.ext.has('compileSdkVersion') ? rootProject.ext.compileSdkVersion : 35
+  defaultConfig {
+    minSdkVersion rootProject.ext.has('minSdkVersion') ? rootProject.ext.minSdkVersion : 24
+    targetSdkVersion rootProject.ext.has('targetSdkVersion') ? rootProject.ext.targetSdkVersion : 35
+    versionCode 1
+    versionName "0.1.0"
+    consumerProguardFiles 'proguard-rules.pro'
+  }
+  lintOptions {
+    abortOnError false
+  }
+}
+
+dependencies {
+  implementation 'com.facebook.react:react-android'
+  implementation 'com.huawei.hms:appservice:6.12.0.300'
+  implementation 'com.huawei.hms:iap:6.16.6.305'
+  implementation 'com.huawei.hms:safetydetect:6.7.0.305'
+  implementation 'com.huawei.hms:push:6.13.0.301'
+}
