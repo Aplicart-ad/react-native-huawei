@@ -7,7 +7,9 @@
   "react-native": "src/index.ts",
   "files": [
     "src",
-    "android",
+    "android/src",
+    "android/build.gradle",
+    "android/proguard-rules.pro",
     "plugins",
     "app.plugin.js",
     "README.md",
@@ -26,6 +28,14 @@
     "appgallery",
     "hms"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aplicart-ad/react-native-huawei.git"
+  },
+  "homepage": "https://github.com/Aplicart-ad/react-native-huawei#readme",
+  "bugs": {
+    "url": "https://github.com/Aplicart-ad/react-native-huawei/issues"
+  },
   "license": "MIT",
   "peerDependencies": {
     "expo": "*",
