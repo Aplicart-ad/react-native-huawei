@@ -1,6 +1,6 @@
 {
   "name": "react-native-huawei",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Huawei AppGallery updates, subscriptions, attestation and push for React Native, with an optional Expo config plugin.",
   "main": "src/index.ts",
   "types": "src/index.ts",
