@@ -1,4 +1,4 @@
-package expo.modules.huawei
+package com.aplicart.huawei
 
 import com.facebook.react.bridge.Arguments
 import com.facebook.react.bridge.Promise as ReactPromise

@@ -8,11 +8,11 @@ if (!hasBuiltInKotlin) {
   apply plugin: 'org.jetbrains.kotlin.android'
 }
 
-group = 'expo.modules.huawei'
+group = 'com.aplicart.huawei'
 version = new groovy.json.JsonSlurper().parse(file('../package.json')).version
 
 android {
-  namespace = 'expo.modules.huawei'
+  namespace = 'com.aplicart.huawei'
   compileSdk = rootProject.ext.has('compileSdkVersion') ? rootProject.ext.compileSdkVersion : 35
   defaultConfig {
     minSdk = rootProject.ext.has('minSdkVersion') ? rootProject.ext.minSdkVersion : 24

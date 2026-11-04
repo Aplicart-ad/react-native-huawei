@@ -3,7 +3,7 @@ module.exports = {
     platforms: {
       android: {
         sourceDir: './android',
-        packageImportPath: 'import expo.modules.huawei.HuaweiPackage;',
+        packageImportPath: 'import com.aplicart.huawei.HuaweiPackage;',
         packageInstance: 'new HuaweiPackage()',
       },
       ios: null,

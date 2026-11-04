@@ -210,7 +210,7 @@ const withHmsIapFix = (config, { appId, pushMarker = 'huawei_push' } = {}) => {
         });
       }
 
-      const markerName = 'expo.modules.huawei.PUSH_MARKER';
+      const markerName = 'com.aplicart.huawei.PUSH_MARKER';
       const marker = metaData.find((item) => item.$?.['android:name'] === markerName);
       if (marker) marker.$['android:value'] = pushMarker;
       else metaData.push({ $: { 'android:name': markerName, 'android:value': pushMarker } });

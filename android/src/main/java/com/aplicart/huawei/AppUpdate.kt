@@ -1,4 +1,4 @@
-package expo.modules.huawei
+package com.aplicart.huawei
 
 import android.app.Activity
 import android.content.Intent

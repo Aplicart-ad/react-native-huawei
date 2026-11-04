@@ -83,7 +83,7 @@ remove the SDK's install-packages permission, and add metadata inside applicatio
   <application android:allowBackup="false" tools:replace="android:allowBackup">
     <meta-data android:name="com.huawei.hms.client.appid"
                android:value="appid=YOUR_NUMERIC_APP_ID" />
-    <meta-data android:name="expo.modules.huawei.PUSH_MARKER"
+    <meta-data android:name="com.aplicart.huawei.PUSH_MARKER"
                android:value="huawei_push" />
   </application>
 </manifest>
@@ -148,6 +148,13 @@ remaining string extras become the JS payload. Use the app's launch activity and
 singleTask launch mode so warm taps arrive through onNewIntent. HMS displays notification
 messages; this module does not expose foreground/background data-message handlers or
 request Android notification permission. Request permission in your app as appropriate.
+
+## Upgrading to 0.2.0
+
+The native package moved from `expo.modules.huawei` to `com.aplicart.huawei`. The JS API is
+unchanged. Expo apps only need a clean prebuild. Bare apps must rename the manifest metadata
+to `com.aplicart.huawei.PUSH_MARKER`: under the old name the marker silently falls back to
+`huawei_push`, so a custom marker would stop matching notification taps.
 
 ## Public repository hygiene
 

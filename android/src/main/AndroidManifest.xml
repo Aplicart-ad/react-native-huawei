@@ -2,7 +2,7 @@
   <application>
     <!-- Receives HMS Push Kit token updates (see Push.kt). Inert on builds without HMS Core. -->
     <service
-      android:name="expo.modules.huawei.HuaweiPushService"
+      android:name="com.aplicart.huawei.HuaweiPushService"
       android:exported="false">
       <intent-filter>
         <action android:name="com.huawei.push.action.MESSAGING_EVENT" />

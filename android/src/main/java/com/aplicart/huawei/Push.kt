@@ -1,4 +1,4 @@
-package expo.modules.huawei
+package com.aplicart.huawei
 
 import android.content.Context
 import android.content.Intent
@@ -24,7 +24,7 @@ object HuaweiPush {
 
   private fun pushMarker(context: Context): String {
     val info = context.packageManager.getApplicationInfo(context.packageName, PackageManager.GET_META_DATA)
-    return info.metaData?.getString("expo.modules.huawei.PUSH_MARKER") ?: DEFAULT_PUSH_MARKER
+    return info.metaData?.getString("com.aplicart.huawei.PUSH_MARKER") ?: DEFAULT_PUSH_MARKER
   }
 
   /** Set while the module is alive, so a token arriving through the service reaches JS. */

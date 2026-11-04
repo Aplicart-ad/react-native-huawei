@@ -1,4 +1,4 @@
-package expo.modules.huawei
+package com.aplicart.huawei
 
 import android.content.Context
 import com.huawei.hms.common.ApiException
