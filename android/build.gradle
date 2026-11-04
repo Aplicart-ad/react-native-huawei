@@ -1,23 +1,25 @@
-plugins {
-  id 'com.android.library'
-  id 'org.jetbrains.kotlin.android'
+apply plugin: 'com.android.library'
+
+// AGP 9 compiles Kotlin itself and refuses the Kotlin plugin, unless the app opted out with
+// android.builtInKotlin=false, in which case nothing compiles Kotlin without the plugin.
+def agpMajor = com.android.Version.ANDROID_GRADLE_PLUGIN_VERSION.tokenize('.')[0].toInteger()
+def hasBuiltInKotlin = agpMajor >= 9 && providers.gradleProperty('android.builtInKotlin').getOrElse('true') != 'false'
+if (!hasBuiltInKotlin) {
+  apply plugin: 'org.jetbrains.kotlin.android'
 }
 
 group = 'expo.modules.huawei'
-version = '0.1.0'
+version = new groovy.json.JsonSlurper().parse(file('../package.json')).version
 
 android {
-  namespace "expo.modules.huawei"
-  compileSdkVersion rootProject.ext.has('compileSdkVersion') ? rootProject.ext.compileSdkVersion : 35
+  namespace = 'expo.modules.huawei'
+  compileSdk = rootProject.ext.has('compileSdkVersion') ? rootProject.ext.compileSdkVersion : 35
   defaultConfig {
-    minSdkVersion rootProject.ext.has('minSdkVersion') ? rootProject.ext.minSdkVersion : 24
-    targetSdkVersion rootProject.ext.has('targetSdkVersion') ? rootProject.ext.targetSdkVersion : 35
-    versionCode 1
-    versionName "0.1.0"
+    minSdk = rootProject.ext.has('minSdkVersion') ? rootProject.ext.minSdkVersion : 24
     consumerProguardFiles 'proguard-rules.pro'
   }
-  lintOptions {
-    abortOnError false
+  lint {
+    abortOnError = false
   }
 }
 

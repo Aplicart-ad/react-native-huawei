@@ -5,8 +5,10 @@ Safety Detect attestation, and Push Kit. Works in bare React Native with no Expo
 Expo apps use the same React Native module with an optional config plugin.
 
 Android only; requires a native build. Expo Go, iOS and web cannot execute these APIs.
-The bridge uses React Native's native module interoperability; Android compilation and
-New Architecture runtime behavior still require verification on the target RN version.
+The bridge uses React Native's native module interoperability. Verified on React Native 0.88
+(New Architecture, AGP 9.2) with a minified release build on a device without HMS: startup,
+promise rejections reaching JS, and warm and cold notification-tap delivery. Flows that need
+HMS Core (purchases, account resolution, tokens, update dialog) still require a Huawei device.
 
 ## Installation
 
@@ -164,6 +166,6 @@ npm pack --dry-run
 ```
 
 The plugin tests cover config validation, Gradle edits, manifest updates and repeat runs.
-The React Native bridge, Android compilation and real-device HMS flows still need validation
-in consuming Expo and bare React Native apps. TypeScript and config-plugin tests are checked.
-No React Native or Expo version support matrix has been established.
+Real-device HMS flows and bare React Native apps still need validation. TypeScript and
+config-plugin tests are checked. No React Native or Expo version support matrix has been
+established; see the top of this file for what has been verified.
